@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e5e5e5;
+            color-scheme: dark;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        form {
+            background-color: #1e1e1e;
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            border: 1px solid #2e2e2e;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            color: #a855f7;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            background-color: #2a2a2a;
+            color: #e5e5e5;
+            border: 1px solid #444;
+            border-radius: 8px;
+            font-size: 15px;
+            accent-color: #a855f7;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #a855f7;
+            box-shadow: 0 0 6px #a855f7;
+        }
+
+        .opcoes label {
+            display: inline;
+            font-weight: normal;
+            margin-right: 15px;
+        }
+
+        .opcoes input {
+            width: auto;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background-color: #9333ea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #7e22ce;
+        }
+
+        @media (max-width: 600px) {
+            form {
+                padding: 20px;
+            }
+
+            .opcoes label {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Cadastro</h1>
+
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome">
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email">
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha">
+
+        <label for="nascimento">Data de nascimento</label>
+        <input type="date" id="nascimento" name="nascimento">
+
+        <label for="curso">Curso</label>
+        <select id="curso" name="curso">
+            <option value="">Selecione</option>
+            <option value="ads">Análise e Desenvolvimento de Sistemas</option>
+            <option value="cc">Ciência da Computação</option>
+            <option value="si">Sistemas de Informação</option>
+        </select>
+
+        <label>Sexo</label>
+        <div class="opcoes">
+            <label><input type="radio" name="sexo" value="masculino"> Masculino</label>
+            <label><input type="radio" name="sexo" value="feminino"> Feminino</label>
+            <label><input type="radio" name="sexo" value="outro"> Outro</label>
+        </div>
+
+        <label>Interesses</label>
+        <div class="opcoes">
+            <label><input type="checkbox" name="interesses" value="programacao"> Programação</label>
+            <label><input type="checkbox" name="interesses" value="design"> Design</label>
+            <label><input type="checkbox" name="interesses" value="banco"> Banco de Dados</label>
+        </div>
+
+        <label for="comentarios">Comentários</label>
+        <textarea id="comentarios" name="comentarios" rows="4"></textarea>
+
+        <label for="foto">Upload de foto</label>
+        <input type="file" id="foto" name="foto" accept="image/*">
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
